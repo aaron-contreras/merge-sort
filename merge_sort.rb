@@ -4,8 +4,8 @@ def merge(left_half, right_half)
   merged_array = []
 
   loop do
-    break merged_array += right_half if left_half.empty?
-    break merged_array += left_half if right_half.empty?
+    break merged_array + right_half if left_half.empty?
+    break merged_array + left_half if right_half.empty?
 
     merged_array << if left_half.first < right_half.first
                       left_half.shift
