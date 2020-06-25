@@ -16,15 +16,13 @@ def merge(left_half, right_half)
 end
 
 def merge_sort(array)
-  return array if array.empty? || array.length == 1
+  return array if array.length < 2
 
-  left_half = array[0...(array.length / 2)]
-  right_half = array[(array.length / 2)..-1]
+  middle = array.length / 2
+  left_half = merge_sort array[0...middle]
+  right_half = merge_sort array[middle..-1]
 
-  sorted_left_half = merge_sort left_half
-  sorted_right_half = merge_sort right_half
-
-  merge sorted_left_half, sorted_right_half
+  merge left_half, right_half
 end
 
 # Tests
