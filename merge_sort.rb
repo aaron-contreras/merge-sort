@@ -16,8 +16,7 @@ def merge(left_half, right_half)
 end
 
 def merge_sort(array)
-  return array if array.empty?
-  return array if array.length == 1
+  return array if array.empty? || array.length == 1
 
   left_half = array[0...(array.length / 2)]
   right_half = array[(array.length / 2)..-1]
